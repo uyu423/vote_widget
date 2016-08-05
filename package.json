@@ -1,0 +1,19 @@
+{
+  "name": "vote_widget",
+  "version": "0.0.1",
+  "description": "Movie Vote Widget with express.js & React.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uyu423/vote_widget.git"
+  },
+  "author": "Yowu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uyu423/vote_widget/issues"
+  },
+  "homepage": "https://github.com/uyu423/vote_widget#readme"
+}
