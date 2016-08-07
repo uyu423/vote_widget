@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<meta charset="charset=utf-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>VoteMokup</title>
+		<!-- CDN -->
+		<!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<!-- 부가적인 테마 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<!-- Custom CSS -->
+	</head>
+	<body>
+		<div class="container">
+			<!-- voteMain Component -->
+
+			<!-- if you not login -->
+			<div class="page-header">
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-body ">
+								<button class="btn btn-primary btn-lg center-block">
+									<i class="fa fa-sign-in"></i>
+									Login
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+				<!-- if you login -->
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="media">
+									<div class="media-left">
+										<img src="http://placehold.it/65x65" alt="userimg" class="media-object img-circle">
+									</div>
+									<div class="media-body">
+										<h4>foo@bar.com <small><a href="#">Logout</a></small></h4>
+										<span>Foo Bar</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="public/lucy.jpg" alt="">
+						<div class="caption">
+							<h3>루시 (Lucy)</h3>
+							<p>2014, 뤽 베송</p>
+							<hr/>
+							<p>평범한 삶을 살던 여자 루시(스칼렛 요한슨)는 어느 날 지하세계에서 극악무도하기로 유명한 미스터 장(최민식)에게 납치되어, 몸 속에 강력한 합성 약물을 넣은 채 강제로 운반하게 된다. 다른 운반책들과 같이 끌려가던 루시는 갑작스런 외부의 충격으로 인해 몸 속 약물이 체내로 퍼지게 되면서, 그녀 안의 모든 감각이 깨어나기 시작하는데…</p>
+							<p> <a href="#" role="button" class="center-block btn btn-default btn-lg disabled"><i class="fa fa-exclamation"></i> 로그인이 필요합니다</a> </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="public/exMachina.jpg" alt="">
+						<div class="caption">
+							<h3>엑스 마키나(Ex Machina)</h3>
+							<p>2015, 알렉스 갈린드</p>
+							<hr/>
+							<p>유능한 프로그래머 ‘칼렙’(돔놀 글리슨)은 치열한 경쟁 끝에 인공지능 분야의 천재 개발자 ‘네이든’(오스카 아이삭)의 새로운 프로젝트에 참여하게 된다. 외부엔 알려지지 않은 그의 비밀 연구소로 초대받은 ‘칼렙’은 그 곳에서 네이든이 창조한 매혹적인 A.I. ‘에이바’(알리시아 비칸데르)를 만나게 된다. 그녀의 인격과 감정이 진짜인지 아니면 프로그래밍 된 것인 지를 밝히는 테스트를 진행하지만. 점점 에이바도 그녀의 창조자 네이든도 그리고 자신의 존재조차 믿을 수 없게 되고 모든 것을 의심하게 되는데… </p>
+							<p> <a href="#" role="button" class="center-block btn btn-primary btn-lg" data-toggle="modal" data-target="#resultModal"><i class="fa fa-check"></i> 투표하기</a> </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="public/transcendence.jpg" alt="">
+						<div class="caption">
+							<h3>트랜센던스 (Transcendence)</h3>
+							<p>2014, 윌리 피스터</p>
+							<hr/>
+							<p>인류가 수억 년에 걸쳐 이룬 지적능력을 초월하고 자각능력까지 가진 슈퍼컴 ‘트랜센던스’의 완성을 목전에 둔 천재 과학자 ‘윌’(조니 뎁)은 기술의 발전은 인류의 멸망이라 주장하는 반(反) 과학단체 ‘RIFT’의 공격을 당해 목숨을 잃는다. 연인 ‘에블린’(레베카 홀)은 윌의 뇌를 컴퓨터에 업로드 시켜 그를 살리는데 성공하지만, 또 다른 힘을 얻은 그는 온라인에 접속해 자신의 영역을 전 세계로 넓혀가기 시작하는데…</p>
+							<p> <a href="#" role="button" class="center-block btn btn-primary btn-lg" data-toggle="modal" data-target="#resultModal"><i class="fa fa-check"></i> 투표하기</a> </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+			 	<!-- button class="btn btn-success btn-lg center-block" data-toggle="modal" data-target="#resultModal">결과 보기</button> -->
+			</div>
+			<hr/>
+
+			<!-- voteResult Modal Component -->
+			<div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" data-dismiss="modal" aria-lebel="Close" class="close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-tile">투표 하셨습니다.</h4>
+						</div>
+						<div class="modal-body">
+							<div class="media">
+								<div class="media-left media-middle">
+									<img src="public/transcendence.jpg" alt="" class="media-object img-circle" style="width:70px; height: 70px">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading" style="padding-bottom: 10px">트랜센던스 (Transcendence) <small>2014, 윌리 피스터</small></h4>
+									<div class="progress">
+										<div style="width: 60%; min-width: 5em" aria-valuemin="0" role="progressbar" aria-valuemax="100" aria-valuenow="60" class="progress-bar">60% (6,000)</div>
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="media">
+								<div class="media-left media-middle">
+									<img src="public/lucy.jpg" alt="" class="media-object img-circle" style="width:70px; height: 70px">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading" style="padding-bottom: 10px">루시 (Lucy) <small>2015, 뤽 베송</small></h4>
+									<div class="progress">
+										<div style="width: 40%; min-width: 5em" aria-valuemin="0" role="progressbar" aria-valuemax="100" aria-valuenow="40" class="progress-bar">40% (4,000)</div>
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="media">
+								<div class="media-left media-middle">
+									<img src="public/exMachina.jpg" alt="" class="media-object img-circle" style="width:70px; height: 70px">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading" style="padding-bottom: 10px">엑스 마키나 (Ex Machina) <small>2015, 알렉스 갈린드</small></h4>
+									<div class="progress">
+										<div style="width: 5%; min-width: 5em" aria-valuemin="0" role="progressbar" aria-valuemax="100" aria-valuenow="5" class="progress-bar">5% (500)</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button data-dismiss="modal" type="button" class="btn btn-default center-blcok">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Vote Doing Result Modal -->
+		</div>
+	</body>
+</html>
