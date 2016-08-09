@@ -1,35 +1,24 @@
 import React from 'react';
-import { Thumbnail, Button, Col, Row } from 'react-bootstrap';
+import { ProgressBar, Thumbnail, Button, Col, Row, Modal, Media } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import { connect } from 'react-redux';
+
+import VoteItem from './VoteItem';
+import ResultModal from './modals/ResultModal';
 
 class Body extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
 		return(
 			<Row>
 				<VoteItem />
 				<VoteItem />
 				<VoteItem />
+				<ResultModal />
 			</Row>
-		);
-	}
-}
-
-class VoteItem extends React.Component {
-	render() {
-		return(
-			<Col sm={4}>
-				<Thumbnail src="http://placehold.it/500x700">
-					<h3>MovieName</h3>
-					<p>Year, Director</p>
-					<hr/>
-					<p>Movie Desc</p>
-					<p>
-						<Button bsSize="large" bsStyle="primary" block>
-							<FontAwesome name="check"/> 투표하기
-						</Button>
-					</p>
-				</Thumbnail>
-			</Col>
 		);
 	}
 }
