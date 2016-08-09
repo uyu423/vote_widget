@@ -40,3 +40,10 @@ bower_components
 # Vim files
 *.swo
 *.swp
+
+# Custom .env
+.env
+
+# Build files
+public/bundle.js
+build

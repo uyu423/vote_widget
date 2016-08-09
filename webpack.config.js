@@ -1,28 +1,21 @@
 module.exports = {
-	entry : './app/index.js',
+	entry : './src/index.js',
 
 	output : {
-		path : __dirname,
+		path : __dirname + '/public',
 		filename: 'bundle.js'
-	},
-
-	devServer : {
-		inline: true,
-		port : 3000,
-		contentBase : __dirname + '/views/'
 	},
 
 	module : {
 		loaders : [
-			{
-				test : /\.js$/,
-				loader : 'babel-loader',
-				exclude : /node_modules/,
-				query : {
+		{
+			test : /\.js$/,
+			exclude : /node_modules/,
+			loaders : [
+				'babel?' + JSON.stringify({
 					cacheDirectory: true,
 					presets : ['es2015', 'react']
-				}
-			}
-		]
-	}
+				})]
+		}
+		]}
 }
