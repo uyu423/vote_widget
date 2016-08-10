@@ -1,8 +1,13 @@
 import express from 'express';
-import accountContoller from './controllers/account'
+import  * as account from './controllers/account';
+import { requireAuth } from './config/jwt';
 
 const router = express.Router();
 
-router.use('/account', accountContoller);
+/* account controller */
+router.post('/account/login', account.postLogin);
+router.get('/account/:id', requireAuth, account.getUserInfo);
+
+/* movie controller */
 
 export default router;
