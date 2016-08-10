@@ -5,7 +5,7 @@
 * [vote_widget Wiki](https://github.com/uyu423/vote_widget/wiki)
 
 ## Database Schema
-### Table:movies
+### Table:movie
 ```sql
 -- 영화 정보 테이블
 CREATE TABLE IF NOT EXISTS `movie` (
@@ -27,7 +27,7 @@ COMMENT '영화 정보 테이블';
     (NULL, '엑스 마키나 (Ex Machina)', '알렉스 갈린드', '유능한 프로그래머 ‘칼렙’(돔놀 글리슨)은 치열한 경쟁 끝에 인공지능 분야의 천재 개발자 ‘네이든’(오스카 아이삭)의 새로운 프로젝트에 참여하게 된다. 외부엔 알려지지 않은 그의 비밀 연구소로 초대받은 ‘칼렙’은 그 곳에서 네이든이 창조한 매혹적인 A.I. ‘에이바’(알리시아 비칸데르)를 만나게 된다. 그녀의 인격과 감정이 진짜인지 아니면 프로그래밍 된 것인 지를 밝히는 테스트를 진행하지만. 점점 에이바도 그녀의 창조자 네이든도 그리고 자신의 존재조차 믿을 수 없게 되고 모든 것을 의심하게 되는데…', '2015', 'http://cfile116.uf.daum.net/image/227AFF4E5486B719247C67'), 
     (NULL, '트랜센던스 (Transcendence)', '윌리 피스터', '인류가 수억 년에 걸쳐 이룬 지적능력을 초월하고 자각능력까지 가진 슈퍼컴 ‘트랜센던스’의 완성을 목전에 둔 천재 과학자 ‘윌’(조니 뎁)은 기술의 발전은 인류의 멸망이라 주장하는 반(反) 과학단체 ‘RIFT’의 공격을 당해 목숨을 잃는다. 연인 ‘에블린’(레베카 홀)은 윌의 뇌를 컴퓨터에 업로드 시켜 그를 살리는데 성공하지만, 또 다른 힘을 얻은 그는 온라인에 접속해 자신의 영역을 전 세계로 넓혀가기 시작하는데…', '2014', 'http://cfile119.uf.daum.net/image/243A7A4752BB8C5C377EEF');
   ```
-### Table:users
+### Table:user
 ```sql
 -- 사용자 정보 테이블
 CREATE TABLE IF NOT EXISTS `user` (
@@ -87,7 +87,9 @@ CREATE VIEW `view-voteResult` AS
   ```
 
 ## Development Enviorment
+* Ubuntu 16.04 LTS (x64)
 * node@6.3.1
+* mariadb@10.0.25
 
 ## Require
 * npm || npm3
