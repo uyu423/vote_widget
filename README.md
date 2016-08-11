@@ -86,6 +86,16 @@ CREATE VIEW `view-voteResult` AS
   ORDER BY `voteCount` DESC;
   ```
 
+### Query:Movies table에 있는 모든 영화의 “영화 제목”, “좋아하는 사람 수"를 보여주는 쿼리문
+```sql
+SELECT * FROM `view-voteResult`
+```
+
+### Query:사용자들이 가장 좋아하는 영화를 보여주는 쿼리문
+```sql
+SELECT * FROM `view-voteResult` LIMIT 0, 1
+```
+
 ## Development Enviorment
 * Ubuntu 16.04 LTS (x64)
 * node@6.3.1
