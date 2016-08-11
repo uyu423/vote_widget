@@ -4,7 +4,6 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import session from 'express-session';
 import expressValidator from 'express-validator';
 
 import webpackDevServer from 'webpack-dev-server';
@@ -26,11 +25,6 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
-app.use(session({
-	secret: process.env.SECRET_KEY,
-	resave : false,
-	saveUninitialized : true
-}));
 
 app.use('/api', route);
 app.use('/', express.static(path.join(__dirname, '../public')));
