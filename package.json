@@ -8,8 +8,7 @@
     "clean": "rm -rf build public/bundle.js",
     "build": "babel server --out-dir build --presets=es2015 && webpack",
     "start": "cross-env NODE_ENV=production node ./build/server.js",
-    "development": "cross-env NODE_ENV=development nodemon --exec babel-node --presets=es2015 ./server/server.js --watch server",
-    "apidoc": "apidoc -i server/controllers/ -o apidoc/"
+    "development": "cross-env NODE_ENV=development nodemon --exec babel-node --presets=es2015 ./server/server.js --watch server"
   },
   "repository": {
     "type": "git",
@@ -26,15 +25,10 @@
     "babel-plugin-react-transform": "^2.0.2",
     "babel-polyfill": "^6.13.0",
     "body-parser": "^1.15.2",
-    "colors": "^1.1.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-session": "^1.14.0",
-    "express-validator": "^2.20.8",
-    "jwt-simple": "^0.5.0",
     "morgan": "^1.7.0",
-    "mysql": "^2.11.1",
-    "node-qsb": "0.0.3-1",
     "path": "^0.12.7",
     "react": "^15.3.0",
     "react-bootstrap": "^0.30.2",
@@ -51,7 +45,6 @@
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
-    "util": "^0.10.3",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2"
