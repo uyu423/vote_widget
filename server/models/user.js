@@ -31,3 +31,13 @@ export function selectUserById(req, callback) {
 	});
 
 }
+
+export function updateUserMovieIdById(req, callback) {
+	const qs = new qsb().update('user')
+		.set('movieId', req.movieId)
+		.where('id', '=', req.id);
+	qs.build().printString();
+	execute(qs, (err, res) => {
+		err ? callback(err, null) : callback(null, res);
+	});
+}
