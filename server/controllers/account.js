@@ -5,6 +5,7 @@ import path from 'path';
 import util from 'util';
 
 export function postLogin(req, res) {
+	console.log("req.body.email : ", req.body.email);
 	req.assert('email', 'email type is invalid').isEmail();
 	req.assert('email', 'email not allow empty').notEmpty();
 
