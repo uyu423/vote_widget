@@ -55,7 +55,6 @@ export function getMovies(req, res) {
 	movieModel.selectMovies(req, (err, rows) => {
 		if(err) {
 			res.status(500).json({
-				success : false,
 				message : "Error : MovieModel.selectMovies"
 			})
 		}
