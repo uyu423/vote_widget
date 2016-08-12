@@ -14,7 +14,6 @@ export function postLogin(req, res) {
 			return item.msg;
 		});
 		res.status(401).json({
-			success : false,
 			message : "Error : " + parseErr
 		});
 	}
@@ -22,13 +21,11 @@ export function postLogin(req, res) {
 		userModel.selectUserByEmail({ email : req.body.email }, (err, rows) => {
 			if(err) {
 				res.status(500).json({
-					success : false,
 					message : "Error : UserModel.selectUserByEmail"
 				});
 			}
 			else if(rows.length != 1) {
 				res.status(401).json({
-					success : false,
 					message : "Error : Not Exist Email"
 				});
 			}
@@ -64,7 +61,6 @@ export function getUserInfo(req, res) {
 
 	if(req.headers.parseToken.id != req.params.id) {
 		res.status(401).json({
-			success : false,
 			message : "Error : Can Not Access Other User Info"
 		});
 	}
@@ -75,7 +71,6 @@ export function getUserInfo(req, res) {
 			return item.msg;
 		});
 		res.status(401).json({
-			success : false,
 			message : "Error : " + parseErr 
 		});
 	}
@@ -83,7 +78,6 @@ export function getUserInfo(req, res) {
 		userModel.selectUserById({ id : req.params.id }, (err, rows) => {
 			if(err) {
 				res.status(500).json({
-					success : false,
 					message : "Error : UserModel.selectUserById"
 				});
 			}
