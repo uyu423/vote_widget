@@ -49,9 +49,11 @@ export function putUserMovieId(req, res) {
 
 		const error = req.validationErrors();
 		if(error) {
+			let parseErr = error.map(function(item, idx) {
+				return item.msg;
+			});
 			res.status(401).json({
-				success : false,
-				message : "Error : " + util.inspect(error)
+				message : "Error : " + parseErr 
 			});
 		}
 		else {
@@ -128,7 +130,6 @@ export function getVoteResult(req, res) {
 	viewModel.selectVoteResultAll(req, (err, rows) => {
 		if(err) {
 			res.status(500).json({
-				success : false,
 				message : "Error : ViewModel.selectVoteResultAll"
 			})
 		}
@@ -175,7 +176,6 @@ export function getVoteResultTop(req, res) {
 	viewModel.selectVoteResultTop(req, (err, rows) => {
 		if(err) {
 			res.status(500).json({
-				success : false,
 				message : "Error : ViewModel.selectVoteResultTop"
 			})
 		}
