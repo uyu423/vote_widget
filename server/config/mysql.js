@@ -21,9 +21,9 @@ export const execute = (qs, callback) => {
         if(err) {
             // cb(err, null);
             throw err;
-            console.log('db error'.red);
+            console.log('db error');
             connection.release();
-            process.exit();
+            process.exit(1);
         }
         else {
             connection.query(qs.build().returnString(), function (err, rows) {

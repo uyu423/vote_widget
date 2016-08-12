@@ -10,9 +10,12 @@ export function postLogin(req, res) {
 
 	const error = req.validationErrors();
 	if(error) {
+		let parseErr = error.map(function(item, idx) {
+			return item.msg;
+		});
 		res.status(401).json({
 			success : false,
-			message : "Error : " + util.inspect(error)
+			message : "Error : " + parseErr
 		});
 	}
 	else {
@@ -68,9 +71,12 @@ export function getUserInfo(req, res) {
 
 	const error = req.validationErrors();
 	if(error) {
+		let parseErr = error.map(function(item, idx) {
+			return item.msg;
+		});
 		res.status(401).json({
 			success : false,
-			message : "Error : " + util.inspect(error)
+			message : "Error : " + parseErr 
 		});
 	}
 	else {

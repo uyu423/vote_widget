@@ -34,6 +34,10 @@ app.get('/test', (req, res) => {
 	return res.send('Hello World');
 });
 
+app.listen(process.env.PORT, () => {
+	console.log("Server Listening on Port : " + process.env.PORT);
+});
+
 /* if `npm run development` */
 if(process.env.NODE_ENV == 'development' || process.env.NODE_ENV == undefined) {
 	console.log("Server ENV : development");
@@ -46,10 +50,4 @@ if(process.env.NODE_ENV == 'development' || process.env.NODE_ENV == undefined) {
 	});
 
 }
-else {
-	console.log("Server ENV : production");
-}
 
-app.listen(process.env.PORT, () => {
-	console.log("Server Listening on Port : " + process.env.PORT);
-});
