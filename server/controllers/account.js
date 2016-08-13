@@ -40,6 +40,8 @@ export function postLogin(req, res) {
 
 				const token = jwt.encode({
 					id : row.id,
+					email : row.email,
+					name : row.name,
 					expire : expire 
 				}, process.env.SECRET_KEY);
 
@@ -93,4 +95,12 @@ export function getUserInfo(req, res) {
 			}
 		});
 	}
+}
+
+export function getCheckUserToken(req, res) {
+	//Token Vaildate Checked Middleware
+	res.status(200).json({
+		succes : true,
+		data : req.headers.parseToken
+	});
 }

@@ -47,3 +47,6 @@ bower_components
 # Build files
 public/bundle.js
 build
+
+# old react files
+.src

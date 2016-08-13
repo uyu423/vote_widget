@@ -1,31 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App, Home, Result } from 'containers';
-import { Provider } from 'react-redux';
-import * as redux from 'redux';
-import rootReducer from './reducers';
+
+// containers
+import { App, Home, Login, Movie, VoteResult } from 'containers';
+
+// routers
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+
+// redux
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducers from 'reducers';
 import thunk from 'redux-thunk';
 
-//thunk middleware not work
-//const store = createStore(rootReducer, applyMiddleware(thunk), window.devToolsExtension && window.devToolsExtension());
-
-//thunk middleware work.. why???
-const store = redux.createStore(
-	rootReducer,
-	redux.compose(
-		redux.applyMiddleware(thunk),
+const rootElement = document.getElementById('root');
+const store = createStore(
+	reducers,
+	compose(
+		applyMiddleware(thunk),
 		window.devToolsExtension && window.devToolsExtension()
 	)
 );
 
-const rootElement = document.getElementById('root');
 ReactDOM.render(
-	<Provider store = {store}>
+	<Provider store={store}>
 		<Router history={browserHistory}>
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}/>
-				<Route path="vote_result" component={Result}/>
+				<Route path="home" component={Home}/>
+				<Route path="login" component={Login}/>
+				<Route path="movie" component={Movie}/>
+				<Route path="vote_result" component={VoteResult}/>
 			</Route>
 		</Router>
 	</Provider>, rootElement

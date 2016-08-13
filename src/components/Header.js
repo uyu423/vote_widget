@@ -1,62 +1,59 @@
 import React from 'react';
-import { Row, Col, Panel, Button, Media, Image } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import { connect } from 'react-redux';
-import { loginModalOn } from '../actions';
-
-import LoginModal from './modals/LoginModal';
+import { Link } from 'react-router';
+import { LinkContainer } from 'react-router-bootstrap';
 
 class Header extends React.Component {
 	render() {
-		const loginOff = (
-			<Button onClick={ this.props.onModal } className="center-block" bsSize="large" bsStyle="primary">
-				<FontAwesome name="sign-in"/> 로그인
-			</Button>
+		const loginButton = (
+			<LinkContainer to="/login">
+				<NavItem>
+					<FontAwesome name="sign-in"/> Login
+				</NavItem>
+			</LinkContainer>
+
 		);
-		const loginOn = (
-			<Media>
-				<Media.Left>
-					<Image width={64} height={64} src="http://placehold.it/64x64" circle/>
-				</Media.Left>
-				<Media.Body>
-					<Media.Heading>E@mail.com <small><a href="#">logout</a></small></Media.Heading>
-					<p>Real Name</p>
-				</Media.Body>
-			</Media>
+		const logoutButton = (
+			<NavItem onClick={this.props.onLogout}>
+				<FontAwesome name="sign-out"/> Logout
+			</NavItem>
 		);
 		return (
-			<div className="page-header">
-				<Row>
-					<Col sm={6} smOffset={3}>
-						<Panel>
-							{ this.props.isLoggedIn ? loginOn : loginOff }
-						</Panel>
-					</Col>
-				</Row>
-			<LoginModal />
-			</div>
+			<Navbar>
+				<Navbar.Header>
+					<Navbar.Brand>
+						<Link to="/">Vote Widget</Link>
+					</Navbar.Brand>
+					<Navbar.Toggle/>
+				</Navbar.Header>
+				<Navbar.Collapse>
+					<Nav>
+						<LinkContainer to="/movie">
+							<NavItem>Movie</NavItem>
+						</LinkContainer>
+						<LinkContainer to="/vote_result">
+							<NavItem>Result</NavItem>
+						</LinkContainer>
+					</Nav>
+					<Nav pullRight>
+						{ this.props.isLoggedIn ? logoutButton : loginButton }
+					</Nav>
+				</Navbar.Collapse>
+			</Navbar>
 		);
 	}
 }
 
 Header.propTypes = {
+	isLoggedIn : React.PropTypes.bool,
 	onLogout : React.PropTypes.func
-}
+};
 
 Header.defaultProps = {
-	onLogout : () => { console.error("logout function not defined"); }
-}
+	isLoggedIn : false,
+	onLogout : () => { console.log("logout function not defined"); }
 
-let mapStateToProps = (state) => {
-	return {
-		isLoggedIn: state.loginState.login.status.isLoggedIn
-	}
-}
+};
 
-let mapDispatchToProps = (dispatch) => {
-	return {
-		onModal : () => dispatch(loginModalOn())
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;

@@ -1,4 +1,6 @@
 import Header from './Header';
-import Body from './Body';
+import Authentication from './Authentication';
+import ItemList from './ItemList';
+import Item from './Item';
 
-export { Header, Body };
+export { Header, Authentication, ItemList, Item };
