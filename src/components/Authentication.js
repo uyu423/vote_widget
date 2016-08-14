@@ -35,6 +35,7 @@ class Authentication extends React.Component {
 		return (
 			<Row>
 				<Col sm={4} smOffset={4}>
+					<p>You can using demo account. demo@account.com</p>
 					<FormGroup>
 						<FormControl
 							name="email"
