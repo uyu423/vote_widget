@@ -99,9 +99,17 @@ export function getUserInfo(req, res) {
 }
 
 export function getCheckUserToken(req, res) {
-	//Token Vaildate Checked Middleware
-	res.status(200).json({
-		succes : true,
-		data : req.headers.parseToken
+	userModel.selectUserById({id : req.headers.parseToken.id}, (err, rows) => {
+		if(err) {
+			res.status(500).json({
+				message : "Error : UserModel.selectUserById"
+			});
+		}
+		else {
+			const row = rows[0];
+			res.status(200).json({
+				data : row
+			});
+		}
 	});
 }
