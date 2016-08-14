@@ -6,8 +6,16 @@ import {
 	AUTH_GET_STATUS,
 	AUTH_GET_STATUS_SUCCESS,
 	AUTH_GET_STATUS_FAILURE,
-	AUTH_LOGOUT
+	AUTH_LOGOUT,
+	CHANGE_USER_MOVIE_ID
 } from './ActionTypes';
+
+export function changeUserMovieId(movieId) {
+	return  {
+		type : CHANGE_USER_MOVIE_ID,
+		movieId
+	}
+}
 
 export function loginRequest(email) {
 	return (dispatch) => {
@@ -20,7 +28,8 @@ export function loginRequest(email) {
 					email : res.data.data.row.email,
 					name : res.data.data.row.name,
 					id : res.data.data.row.id,
-					token : res.data.data.token
+					token : res.data.data.token,
+					movieId : res.data.data.row.movieId
 				}));
 			}).catch((err) => {
 				//failed
@@ -92,3 +101,4 @@ export function logoutSuccess() {
 		type : AUTH_LOGOUT
 	}
 }
+

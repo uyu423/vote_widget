@@ -42,6 +42,7 @@ export function postLogin(req, res) {
 					id : row.id,
 					email : row.email,
 					name : row.name,
+					movieId : row.movieId,
 					expire : expire 
 				}, process.env.SECRET_KEY);
 

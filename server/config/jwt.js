@@ -17,7 +17,8 @@ export function requireAuth(req, res, next) {
 			req.headers.parseToken = { 
 				id : decode.id,
 				email : decode.email,
-				name : decode.name
+				name : decode.name,
+				movieId : decode.movieId
 			};
 			next(); return;
 		}

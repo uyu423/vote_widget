@@ -10,7 +10,8 @@ const initialState = {
 		isLoggedIn : false,
 		currentUserId : '',
 		currentUserEmail : '',
-		currentUserName : ''
+		currentUserName : '',
+		currentUserMovieId : ''
 	}
 }
 
@@ -35,7 +36,8 @@ export default function authentication(state, action) {
 					isLoggedIn : { $set : true },
 					currentUserEmail : { $set : action.res.email },
 					currentUserName : { $set : action.res.name },
-					currentUserId : { $set : action.res.id }
+					currentUserId : { $set : action.res.id },
+					currentUserMovieId : { $set : action.res.movieId }
 				}
 			});
 		case types.AUTH_LOGIN_FAILURE:
@@ -56,7 +58,8 @@ export default function authentication(state, action) {
 					valid : { $set : true },
 					currentUserEmail : { $set : action.res.email },
 					currentUserName : { $set : action.res.name },
-					currentUserId : { $set : action.res.id }
+					currentUserId : { $set : action.res.id },
+					currentUserMovieId : { $set : action.res.movieId }
 				}
 			});
 		case types.AUTH_GET_STATUS_FAILURE:
@@ -72,7 +75,14 @@ export default function authentication(state, action) {
 					isLoggedIn : { $set : false },
 					currentUserEmail : { $set : '' },
 					currentUserName : { $set : '' },
-					currentUserId : { $set : '' }
+					currentUserId : { $set : '' },
+					currentUserMovieId : { $set : '' }
+				}
+			});
+		case types.CHANGE_USER_MOVIE_ID: 
+			return update(state, {
+				status: {
+					currentUserMovieId : { $set : action.movieId }
 				}
 			});
 		default:

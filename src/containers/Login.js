@@ -14,10 +14,6 @@ class Login extends React.Component {
 		return this.props.loginRequest(email).then(
 			() => {
 				if(this.props.status === "SUCCESS") {
-					let loginData = {
-						isLoggedIn : true,
-						email : email
-					}
 					alert('로그인 성공');
 					browserHistory.push('/');
 					return true;
