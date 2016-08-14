@@ -12,9 +12,8 @@ export function voteRequest(userId, movieId, token) {
 	return (dispatch) => {
 		dispatch(vote());
 
-		let url = "http://localhost:8888/api/vote/";
 		axios.defaults.headers.common['token'] = token;
-		return axios.put(url + userId, {movieId})
+		return axios.put("/api/vote/" + userId, {movieId})
 			.then((res) => {
 				//console.log("API RES : ", res);
 				dispatch(voteSuccess());
@@ -46,8 +45,7 @@ export function voteResultRequest() {
 	return (dispatch) => {
 		dispatch(voteResult());
 
-		let url = "http://localhost:8888/api/vote";
-		return axios.get(url).then((res) => {
+		return axios.get("/api/vote").then((res) => {
 				//console.log("API RES : ", res.data.data.rows);
 				dispatch(voteResultSuccess(res.data.data.rows));
 			}).catch((err) => {
