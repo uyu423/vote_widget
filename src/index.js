@@ -29,8 +29,8 @@ ReactDOM.render(
 				<IndexRoute component={Home}/>
 				<Route path="home" component={Home}/>
 				<Route path="login" component={Login}/>
-				<Route path="movie" component={Movie}/>
-				<Route path="vote_result" component={VoteResult}/>
+				<Route path="votes" component={Movie}/>
+				<Route path="vote_results" component={VoteResult}/>
 			</Route>
 		</Router>
 	</Provider>, rootElement

@@ -10,12 +10,12 @@ class Home extends React.Component {
 				<p>express.js + MySQL(MariaDB) + React.js + Ice Americano... react is very difficult.. but interesting..</p>
 				<p>in fact.. my first react app...</p>
 				<ButtonToolbar>
-					<LinkContainer to="/movie">
+					<LinkContainer to="/votes">
 						<Button bsStyle="primary" bsSize="lg">
 							영화 목록 보러가기
 						</Button>
 					</LinkContainer>
-					<LinkContainer to="/vote_result">
+					<LinkContainer to="/vote_results">
 						<Button bsStyle="primary" bsSize="lg">
 							투표 결과 보러가기	
 						</Button>

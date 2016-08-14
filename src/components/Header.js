@@ -29,10 +29,10 @@ class Header extends React.Component {
 				</Navbar.Header>
 				<Navbar.Collapse>
 					<Nav>
-						<LinkContainer to="/movie">
+						<LinkContainer to="/votes">
 							<NavItem>Movie</NavItem>
 						</LinkContainer>
-						<LinkContainer to="/vote_result">
+						<LinkContainer to="/vote_results">
 							<NavItem>Result</NavItem>
 						</LinkContainer>
 					</Nav>

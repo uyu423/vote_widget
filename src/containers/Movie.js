@@ -35,7 +35,7 @@ class Movie extends React.Component {
 					if(this.props.voteStatus.status === 'SUCCESS') {
 						alert('투표 성공');
 						this.props.changeUserMovieId(movieId);
-						browserHistory.push('/vote_result');
+						browserHistory.push('/vote_results');
 						return true;
 					}
 					else {
