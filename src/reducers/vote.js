@@ -20,7 +20,7 @@ export function vote(state, action) {
 				status : { $set : 'WAITING' }
 			});
 		case types.VOTE_SUCCESS:
-			console.log("VOTE_SUCCESS : ", state);
+			//console.log("VOTE_SUCCESS : ", state);
 			return update(state, {
 				status : { $set : 'SUCCESS' }
 			});

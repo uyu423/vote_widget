@@ -16,10 +16,10 @@ export function voteRequest(userId, movieId, token) {
 		axios.defaults.headers.common['token'] = token;
 		return axios.put(url + userId, {movieId})
 			.then((res) => {
-				console.log("API RES : ", res);
+				//console.log("API RES : ", res);
 				dispatch(voteSuccess());
 			}).catch((err) => {
-				console.log("API ERR : ", err);
+				//console.log("API ERR : ", err);
 				dispatch(voteFailure());
 			});
 	}
@@ -48,10 +48,10 @@ export function voteResultRequest() {
 
 		let url = "http://localhost:8888/api/vote";
 		return axios.get(url).then((res) => {
-				console.log("API RES : ", res.data.data.rows);
+				//console.log("API RES : ", res.data.data.rows);
 				dispatch(voteResultSuccess(res.data.data.rows));
 			}).catch((err) => {
-				console.log("API ERR : ", err);
+				//console.log("API ERR : ", err);
 				dispatch(voteResultFailure());
 			});
 	}

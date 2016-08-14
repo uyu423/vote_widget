@@ -12,13 +12,13 @@ class App extends React.Component {
 		}
 		let token = getCookie('token');
 
-		console.log("status : ", this.props.status);
+		//console.log("status : ", this.props.status);
 		if(typeof token === "undefined") return;
 		
-		console.log("token : ", token);
+		//console.log("token : ", token);
 		this.props.getStatusRequest(token).then(
 			() => {
-				console.log("after token chk : ", this.props.status);
+				//console.log("after token chk : ", this.props.status);
 				if(!this.props.status.valid) {
 					let expireDate = new Date();
 					expireDate.setDate((new Date()).getDate() - 1);

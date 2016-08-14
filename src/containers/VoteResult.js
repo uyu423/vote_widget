@@ -7,7 +7,7 @@ class VoteResult extends React.Component {
 	componentDidMount() {
 		this.props.voteResultRequest().then(
 			() => {
-				console.log(this.props.resultData);
+				//console.log(this.props.resultData);
 			}
 		);
 	}

@@ -19,7 +19,7 @@ export default function authentication(state, action) {
 	if(typeof state == "undefined")
 		state = initialState;
 
-	console.log("ACTION: ", action);
+	//console.log("ACTION: ", action);
 	switch(action.type) {
 		case types.AUTH_LOGIN:
 			return update(state, {

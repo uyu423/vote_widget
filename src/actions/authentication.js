@@ -80,7 +80,7 @@ export function login() {
 
 export function loginSuccess(res) {
 	document.cookie = "token=" + res.token;
-	console.log(res);
+	//console.log(res);
 	return {
 		type : AUTH_LOGIN_SUCCESS,
 		res : res

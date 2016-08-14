@@ -13,10 +13,10 @@ class Movie extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("Movie Compo init : ", this.props.status);
+		//console.log("Movie Compo init : ", this.props.status);
 		this.props.itemListRequest().then(
 			() => {
-				console.log(this.props.movieData);
+				//console.log(this.props.movieData);
 			}
 		);
 	}
@@ -39,7 +39,7 @@ class Movie extends React.Component {
 						return true;
 					}
 					else {
-						console.log(this.props);
+						//console.log(this.props);
 						alert('투표 실패;;');
 						return false;
 					}
@@ -58,7 +58,7 @@ class Movie extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log("items : ", state.item);
+	//console.log("items : ", state.item);
 	return { 
 		status : state.authentication.status,
 		movieData : state.item.items.data,
