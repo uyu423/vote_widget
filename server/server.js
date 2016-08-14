@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 
-app.use('/', express.static(path.join(__dirname, './..public')));
+app.use('/', express.static(path.join(__dirname, '../public')));
 app.use('/api', route);
 app.use('/assets', express.static(path.join(__dirname, '../bower_components')));
 app.get('*', (req, res) => {
