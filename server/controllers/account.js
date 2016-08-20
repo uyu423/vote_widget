@@ -5,6 +5,7 @@ import path from 'path';
 import util from 'util';
 
 export function postLogin(req, res) {
+	console.log("req.body.email : ", req.body.email);
 	req.assert('email', 'email type is invalid').isEmail();
 	req.assert('email', 'email not allow empty').notEmpty();
 
@@ -39,6 +40,9 @@ export function postLogin(req, res) {
 
 				const token = jwt.encode({
 					id : row.id,
+					email : row.email,
+					name : row.name,
+					movieId : row.movieId,
 					expire : expire 
 				}, process.env.SECRET_KEY);
 
@@ -92,4 +96,20 @@ export function getUserInfo(req, res) {
 			}
 		});
 	}
+}
+
+export function getCheckUserToken(req, res) {
+	userModel.selectUserById({id : req.headers.parseToken.id}, (err, rows) => {
+		if(err) {
+			res.status(500).json({
+				message : "Error : UserModel.selectUserById"
+			});
+		}
+		else {
+			const row = rows[0];
+			res.status(200).json({
+				data : row
+			});
+		}
+	});
 }

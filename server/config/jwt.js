@@ -4,6 +4,7 @@ import path from 'path';
 
 export function requireAuth(req, res, next) {
 	//console.log('req.headers', req);
+	console.log(req.headers);
 	if(req.headers.token) {
 		dotenv.load({
 			path : path.join(__dirname, '../../.env'),
@@ -13,7 +14,12 @@ export function requireAuth(req, res, next) {
 
 		if(new Date(decode.expire) > new Date()) {
 			console.log("Decoded Token : ", decode);
-			req.headers.parseToken = { id : decode.id };
+			req.headers.parseToken = { 
+				id : decode.id,
+				email : decode.email,
+				name : decode.name,
+				movieId : decode.movieId
+			};
 			next(); return;
 		}
 		else {

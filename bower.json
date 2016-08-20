@@ -1,0 +1,21 @@
+{
+  "name": "vote_widget",
+  "description": "Movie Vote Widget with express.js & React.js",
+  "main": "server.js",
+  "authors": [
+    "Yowu"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/uyu423/vote_widget",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
