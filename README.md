@@ -1,5 +1,5 @@
-# vote_widget with Tumblbug
-* Movie Vote Widget with express.js & react.js
+# Sample Node.js Application 'vote_widget'
+* Movie Vote Widget with express, react, redux
 
 ## Summary
 * [vote_widget Wiki](https://github.com/uyu423/vote_widget/wiki)
